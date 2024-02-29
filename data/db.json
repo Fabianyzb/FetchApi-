@@ -27,6 +27,11 @@
       "author": "Fabian",
       "active": true,
       "completed": false
+    },
+    {
+      "author": "Fabian",
+      "completed": true,
+      "id": "38ae"
     }
   ]
 }
