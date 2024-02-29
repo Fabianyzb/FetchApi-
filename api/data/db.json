@@ -1,0 +1,18 @@
+{
+  "notas": [
+    {
+      "id": "8da9",
+      "description": "Debo terminar el proyecto Metty",
+      "author": "Fabian",
+      "active": true,
+      "completed": false
+    },
+    {
+      "description": "Llenar portafolio",
+      "author": "Fabian",
+      "active": true,
+      "completed": false,
+      "id": "e9e9"
+    }
+  ]
+}
