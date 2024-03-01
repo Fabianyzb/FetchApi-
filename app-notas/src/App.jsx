@@ -35,19 +35,17 @@ const App = () => {
         HOLA
       </p>
       <ul>
-        {
-          !!notas &&
-            notas.length > 0 ?
-            notas.map((nota) => {
-              return (
-                <li>"{nota.description}" - <b>{nota.author}</b></li>
-              )
-            }) :
-            (
-              <li>Lista vacia</li>
-            )
-        }
+        {notas && notas.length > 0 ? (
+          notas.map((nota) => {
+            return (
+              <li key={nota.id}>"{nota.description}" - <b>{nota.author}</b></li>
+            );
+          })
+        ) : (
+          <li>Lista vacía</li>
+        )}
       </ul>
+
     </>
   )
 }
