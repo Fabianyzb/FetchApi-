@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react"
 
 
 const App = () => {
+  /* useState para manipular el estado de get notas  */
   /* definir variable con null xq no sabemos si va a devolver un objeto o array */
   const [notas, setNotas] = useState(null)
 
-  /* Aqui se ejecuta la funcion de getNotas */
+  /* Aqui se ejecuta la funcion de getNotas de abajo */
   useEffect(() => {
     getNotas()
   }, [])
@@ -21,7 +22,9 @@ const App = () => {
         return response.json()
       })
       .then((data) => {
-        console.log(data) 
+        //console.log(data)
+        setNotas(data)
+
       })
   }
 
@@ -31,6 +34,20 @@ const App = () => {
       <p>
         HOLA
       </p>
+      <ul>
+        {
+          !!notas &&
+            notas.length > 0 ?
+            notas.map((nota) => {
+              return (
+                <li>"{nota.description}" - <b>{nota.author}</b></li>
+              )
+            }) :
+            (
+              <li>Lista vacia</li>
+            )
+        }
+      </ul>
     </>
   )
 }
