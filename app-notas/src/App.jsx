@@ -6,6 +6,13 @@ const App = () => {
   /* definir variable con null xq no sabemos si va a devolver un objeto o array */
   const [notas, setNotas] = useState(null)
 
+  const [nota, setNota] = useState({
+    description: "Debo Rehacer Metty",
+    author: "Fabian",
+    active: true,
+    completed: false
+  })
+
   /* Aqui se ejecuta la funcion de getNotas de abajo */
   useEffect(() => {
     getNotas()
@@ -26,6 +33,10 @@ const App = () => {
         setNotas(data)
 
       })
+  }
+
+  const addNota = () => {
+
   }
 
 
