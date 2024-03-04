@@ -18,7 +18,7 @@ const App = () => {
     getNotas()
   }, [])
 
-
+  /* METODO GET */
   const getNotas = () => {
     fetch("http://localhost:4000/notas")
       /* cuando el ejecuta la peticion o promesa de fetch despues viene el .then que manipulara la promesa
@@ -31,12 +31,37 @@ const App = () => {
       .then((data) => {
         //console.log(data)
         setNotas(data)
-
+      })
+      .catch((error) => {
+        console.log(error)
       })
   }
 
-  const addNota = () => {
+  /* METODO POST */
+  const addNota = (nota) => {
+    fetch("http://localhost:4000/notas", {
+      method: 'POST',
+      body: JSON.stringify(nota),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    })
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        console.log(data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
 
+  /* Simular el addNotes en un formulario. La funcion handleSubmit recibe un evento */
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    addNota(nota) //nota viene del useState de la linea 9
   }
 
 
@@ -45,6 +70,13 @@ const App = () => {
       <p>
         HOLA
       </p>
+
+      <form>
+        <button onSubmit={handleSubmit}>
+          Anadir nota
+        </button>
+      </form>
+
       <ul>
         {notas && notas.length > 0 ? (
           notas.map((nota) => {
