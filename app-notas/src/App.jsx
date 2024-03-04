@@ -40,7 +40,7 @@ const App = () => {
   /* METODO POST */
   const addNota = (nota) => {
     fetch("http://localhost:4000/notas", {
-      method: 'POST',
+      method: 'POST', //PUEDE SER PUT
       body: JSON.stringify(nota),
       headers: {
         'Content-type': 'application/json'
