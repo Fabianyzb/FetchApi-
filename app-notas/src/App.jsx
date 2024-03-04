@@ -7,7 +7,7 @@ const App = () => {
   const [notas, setNotas] = useState(null)
 
   const [nota, setNota] = useState({
-    description: "Debo Rehacer Metty",
+    description: "Hacer pagina para catering y servicios de cocina",
     author: "Fabian",
     active: true,
     completed: false
@@ -67,12 +67,8 @@ const App = () => {
 
   return (
     <>
-      <p>
-        HOLA
-      </p>
-
-      <form>
-        <button onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
+        <button>
           Anadir nota
         </button>
       </form>
